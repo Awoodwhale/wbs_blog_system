@@ -1,0 +1,15 @@
+:root {
+    --leftBg: #212120;
+    --rightBg: #f4f3ef;
+    --headBg: #f4f3ef;
+    --headFontBg: #ffffff;
+    --topButtonBg: #77736f;
+    --menuFontActiveBg:#ffd04b;
+    --menuFontBg: #fff; 
+    --menuHoverBg: #1a1a1a;
+    --menuActiveBg: #1a1a1a;
+    --menuButtonBg: #f4f5f5;
+    --indexCardNumberBg: #212121;
+    --indexCardSvgBg: #77736f;
+    --quickWriteFoucsBg: #777777;
+ }

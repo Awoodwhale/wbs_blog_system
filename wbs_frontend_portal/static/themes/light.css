@@ -1,0 +1,88 @@
+:root {
+    --animate-duration: 1s;
+    --animate-delay: 1s;
+    --animate-repeat: 1;
+    --base-font-size: 14px;
+    --font-color: #4c4948;
+    --text-highlight-color: #1f2d3d;
+    --card-bg: #fff;
+    --light-grey: #eee;
+    --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.05);
+    --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.09);
+    --base-font-family: "Butterfly Font", BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Lato, Roboto, "PingFang SC", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+    --global-bg: linear-gradient(90deg, rgba(247, 149, 51, .1) 0, rgba(243, 112, 85, .1) 15%, rgba(239, 78, 123, .1) 30%, rgba(161, 102, 171, .1) 44%, rgba(80, 115, 184, .1) 58%, rgba(16, 152, 173, .1) 72%, rgba(7, 179, 155, .1) 86%, rgba(109, 186, 130, .1) 100%);
+    --btn-bg: #49b1f5;
+    --btn-color: #fff;
+    --btn-hover-color: #ff7242;
+    --sidebar-bg: #f6f8fa;
+    --hr-border: #a4d8fa;
+    --white: #fff;
+    --tab-botton-color: #1f2d3d;
+    --blockquote-bg: rgba(73, 177, 245, 0.1);
+    --right-button-color: rgba(255, 255, 255, 0.8);
+    --tab-botton-bg: #f0f0f0;
+    --headline-presudo: #a0a0a0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #99a9bf;
+    text-decoration: none;
+    transition: all 0.2s;
+    overflow-wrap: break-word;
+}
+
+html,
+body,
+#__nuxt,
+#__layout,
+.index-box,
+.index-header {
+    height: 100%;
+}
+
+body {
+    color: var(--font-color);
+    font-size: var(--base-font-size);
+    font-family: var(--base-font-family);
+    -webkit-tap-highlight-color: transparent;
+    line-height: 2;
+    background: var(--global-bg);
+}
+
+::selection {
+    background: #00c4b6;
+    color: #f7f7f7;
+}
+
+/* 隐藏el-scrollbar横向滚动条 */
+.el-scrollbar__wrap {
+    overflow-x: hidden;
+}
+
+/* 隐藏默认浏览器滚动条 */
+::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0;
+}
+
+.el-scrollbar__thumb {
+    background-color: #92d0f9 !important;
+    background-image: -webkit-linear-gradient(45deg, hsla(0, 0%, 100%, 0.4) 25%, transparent 0, transparent 50%, hsla(0, 0%, 100%, 0.4) 0, hsla(0, 0%, 100%, 0.4) 75%, transparent 0, transparent) !important;
+    border-radius: 2em !important;
+}
+
+.el-scrollbar__bar.is-vertical {
+    width: 8px !important;
+    background-color: rgba(73, 177, 245, 0.2);
+    border-radius: 2em;
+}
+
+.el-scrollbar__bar {
+    right: 0 !important;
+}

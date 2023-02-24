@@ -1,0 +1,41 @@
+diff --git a/node_modules/element-plus/es/directives/mousewheel/index.mjs b/node_modules/element-plus/es/directives/mousewheel/index.mjs
+index 37a5c18..d9437a8 100644
+--- a/node_modules/element-plus/es/directives/mousewheel/index.mjs
++++ b/node_modules/element-plus/es/directives/mousewheel/index.mjs
+@@ -1,6 +1,6 @@
+ import normalizeWheel from 'normalize-wheel-es';
+ import '../../utils/index.mjs';
+-import { isFirefox } from '../../utils/browser.mjs';
++import { isChrome, isFirefox } from '../../utils/browser.mjs';
+ 
+ const mousewheel = function(element, callback) {
+   if (element && element.addEventListener) {
+@@ -10,6 +10,8 @@ const mousewheel = function(element, callback) {
+     };
+     if (isFirefox()) {
+       element.addEventListener("DOMMouseScroll", fn);
++    } else if (isChrome()) {
++      element.addEventListener("mousewheel", fn, {passive: true})
+     } else {
+       element.onmousewheel = fn;
+     }
+@@ -22,4 +24,3 @@ const Mousewheel = {
+ };
+ 
+ export { Mousewheel as default };
+\ No newline at end of file
+-//# sourceMappingURL=index.mjs.map
+diff --git a/node_modules/element-plus/es/utils/browser.mjs b/node_modules/element-plus/es/utils/browser.mjs
+index aa32a37..7eddfe6 100644
+--- a/node_modules/element-plus/es/utils/browser.mjs
++++ b/node_modules/element-plus/es/utils/browser.mjs
+@@ -1,6 +1,6 @@
+ import { isClient } from '@vueuse/core';
+ 
+ const isFirefox = () => isClient && /firefox/i.test(window.navigator.userAgent);
++const isChrome = () => isClient && /chrome/i.test(window.navigator.userAgent);
+ 
+-export { isFirefox };
+-//# sourceMappingURL=browser.mjs.map
++export { isFirefox, isChrome };
+\ No newline at end of file

@@ -1,0 +1,70 @@
+server:
+  port: 2022
+
+spring:
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 100MB
+
+  application:
+    name: woodwhale_blog_system
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/blog_system?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: root
+    hikari:
+      connection-test-query: SELECT 1
+      connection-timeout: 10000
+      idle-timeout: 30000
+      max-lifetime: 50000
+      maximum-pool-size: 10
+      minimum-idle: 3
+      pool-name: HikariCP
+      validation-timeout: 1000
+
+  redis:
+    port: 6379
+    host: 127.0.0.1
+    password: root
+    lettuce:
+      pool:
+        min-idle: 0
+        max-wait: 5s
+        max-active: 10
+        max-idle: 10
+        time-between-eviction-runs: 1s
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  mail:
+    host: smtp的地址
+    username: 你的邮箱
+    password: 邮箱验证密码
+    default-encoding: UTF-8
+
+  data:
+    redis:
+      repositories:
+        enabled: false
+    solr:
+      host: http://127.0.01:11402/solr/Ik_core  # 这里填写部署好的solr的host，需要让solr支持中文分词
+
+blog:
+  cookie:
+    domain: localhost
+  image:
+    save-path: E:\\projects\\ideaProjects\\blogSystem\\images # 保存到本地的文件路径
+    max-size: 5242880 # 5mb
+
+# 是否禁用swagger3（上线后请禁用）
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
